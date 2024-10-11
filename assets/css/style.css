@@ -100,3 +100,10 @@ li {
 .home-section-words p:nth-child(5) {
     margin-left: 30px;
 }
+
+.projects-section {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 40px;
+    margin: 30px;
+}
