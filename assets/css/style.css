@@ -8,6 +8,7 @@
 
 
 :root{
+    --dark-blue-bg-color-tr: #001b2fe5;
     --dark-blue-bg-color: #001b2f;
     --lighter-gray-font-color: #e7e7e7;
 }
@@ -141,19 +142,46 @@ section {
     font-weight: bold;
 }
 
+.project-description {
+    position: relative;
+}
+
+.project-description p {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100%; 
+    width: 100%; 
+    background-color: var(--dark-blue-bg-color-tr); 
+    color: var(--lighter-gray-font-color); 
+    position: absolute;
+    text-shadow: 2px 2px 12px black;
+    font-weight: bold;
+    transition: all .8s;
+    overflow: hidden;
+}
+
+.project-description:hover p {
+    height: 0;
+    /* width: 0; */
+}
+
 .project-description a img {
     width: 100%;
     max-width: 250px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.308);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.308);
 }
 
 .bg-title {
     width: max-content;    
-    background-color: var(--lighter-gray-font-color);
+    background-image: linear-gradient(var(--lighter-gray-font-color), var(--lighter-gray-font-color));
     background-size: 0% 3px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
     transition: background-size 0.5s ease;
+    padding-bottom: 4px;
 }
 
 .bg-title:hover {
