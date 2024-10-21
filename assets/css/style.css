@@ -44,14 +44,19 @@ section {
 }
 
 .h1-title {
-    font-size: 3rem;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .nav-top {
     display: flex;
-    padding: 10px 0px;
     justify-content: space-between;
+    padding: 10px 30px;
     gap: 30px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    transition: all .5s ease;
 }
 
 .nav-top ul {
@@ -67,19 +72,25 @@ section {
     font-size: 1.2rem;
 }
 
+.scroll-nav {
+    background-color: var(--lighter-gray-font-color);
+    color: var(--dark-blue-bg-color);
+}
+
 .home-section {
-    max-width: 555px;
     display: flex;
-    padding-top: 130px;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
     gap: 40px;
+    max-width: 1000px;
 }
 
 .home-section-text {
     display: flex;
     flex-flow: column nowrap;
-    width: 55%;
     height: max-content;
-    gap: 20px;
+    max-width: 500px;
 }
 
 .home-section-words {
@@ -134,11 +145,7 @@ section {
 }
 
 
-.open-divs ul li {
-    margin-top: 20px;
-}
-
-.open-divs ul li a {
+.open-divs div a {
     font-weight: bold;
 }
 
@@ -186,4 +193,49 @@ section {
 
 .bg-title:hover {
     background-size: 100% 3px;
+}
+
+.txt-animated {
+    position: relative;
+}
+
+.txt-animated::before {
+    content: "";
+    color: #1cda55;
+    animation: words 8s infinite;
+}
+
+.txt-animated::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid #1cda55;
+    right: -10px;
+    animation: cursor .5s infinite, typing 20s steps(80) infinite;
+    width: calc(100% + 8px);
+    background-color: var(--dark-blue-bg-color);
+}
+
+@keyframes typing {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 8px);
+    }
+}
+
+@keyframes cursor {
+    0% {
+        border-left: 2px solid var(--dark-blue-bg-color);
+    }
+}
+
+@keyframes words {
+    0%, 50%{
+        content: "Web Developer";
+    }
+    51%, 100% {
+        content: "Python Developer";
+    }
 }
