@@ -239,3 +239,24 @@ section {
         content: "Python Developer";
     }
 }
+
+.nav-social {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.nav-social a {
+    padding-right: 15px;
+    transition: all .1s ease;
+}
+
+.nav-social a:hover {
+    transform: scale(1.2);
+}
